@@ -11,3 +11,5 @@ def categories(request):
 
 def termin(request):
     return HttpResponse('<i>Термины</i>')
+def top(request):
+    return HttpResponse('<h2>Победа</h2>')
