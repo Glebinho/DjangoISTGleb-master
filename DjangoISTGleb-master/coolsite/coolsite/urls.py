@@ -28,4 +28,4 @@ urlpatterns = [
     path('years/<int:years_id>/', years),
     path("spisok_year/<int:key> ",spisok_year),
 ]
-
+handle500=serverError()
