@@ -15,17 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
-from women.views import index, categories, students, spisok, date, years, spisok_year, pageNotFound, badRequest,forbiden,serverError
+from women.views import *
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('women.urls')),
-    path('students/<int:students_id>/', students),
-    path("spisok/<int:key> ",spisok),
-    path('date/<int:date>/',date),
-    path('years/<int:years_id>/', years),
-    path("spisok_year/<int:key> ",spisok_year),
+    path('', include('women.urls'))
 ]
-handle500=serverError()
+handeler403=forbiden
+handler402=badRequest
