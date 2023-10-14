@@ -1,3 +1,4 @@
+import prove as prove
 from django.urls import path,register_converter
 
 from women.classurls import FourDigitYearConverter
@@ -7,14 +8,16 @@ register_converter(FourDigitYearConverter, "yyyy")
 
 urlpatterns = [
 
-    path('', index),
-    path('cat/', categories),
-    path("articles/<yyyy:year>/",year),
-    path('cat/<int:catid>/', categories_id),
-    path('cat/<slug:catid>/', categories_id),
-    path('students/<int:students_id>/', students),
-    path('students/<slug:students>/', students_slug),
+    path('', index, name='home'),
+    path('cat/', categories, name='category'),
+    path("articles/<yyyy:year>/",year, name='articles'),
+    path('cat/<int:catid>/', categories_id, name='cat'),
+    path('cat/<slug:catid>/', categories_sl, name='cat_slug'),
+    path('students/<int:students_id>/', students, name='students'),
+    path('students/<slug:students>/', students_slug, name='students_slug'),
     path("spisok/<int:key> ",spisok),
     path('date/<int:datee>/',date),
+    path('Example/',get_page,name='get_page'),
+    path('Win/<int:pobeda>/',Win),
 
 ]

@@ -24,5 +24,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls'))
 ]
-handeler403=forbiden
-handler402=badRequest
